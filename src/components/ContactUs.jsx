@@ -23,7 +23,7 @@ function ContactUs() {
           Email
         </p>
         <a
-          href="mailto:info@gecraft.com"
+          href="mailto:info@hiscoder.com"
           className="animation-timeline mt-[1.3vw] animate-emergence text-[6.7vw] font-bold sm:mt-[0.45vw] sm:text-[2.3vw] lg:mt-[0.27vw] lg:text-[1.36vw] 2xl:mt-[0.15vw] 2xl:text-[1.4vw]"
         >
           info@hiscoder.com
