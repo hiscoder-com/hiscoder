@@ -1,0 +1,23 @@
+{
+    "useTabs": false,
+    "printWidth": 90,
+    "tabWidth": 2,
+    "trailingComma": "es5",
+    "singleQuote": true,
+    "bracketSameLine": false,
+    "semi": false,
+    "plugins": ["@ianvs/prettier-plugin-sort-imports", "prettier-plugin-tailwindcss"],
+    "importOrder": [
+        "^react$",
+        "",
+        "^vite",
+        "",
+        "<THIRD_PARTY_MODULES>",
+        "",
+        "^@/components/(.*)$",
+        "",
+        "^@/assets/(.*)$",
+        "",
+        "^[./]"
+    ]
+}
