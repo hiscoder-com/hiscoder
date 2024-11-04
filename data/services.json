@@ -1,0 +1,44 @@
+[
+    {
+      "id":"1",
+      "label": "Custom Software",
+      "service": "Custom Software Development, API Development, Data Engineering, Infrastructure & DevOps, AI Development",
+      "description":
+        "HisCoder specializes in developing custom software solutions that cater to the specific needs of your enterprise. Whether you require a bespoke application to streamline operations or a unique tool to enhance customer engagement, our team delivers tailored solutions that fit your budget and business goals. We collaborate closely with you throughout the development process, ensuring that the final product is practical, efficient, and scalable as your business grows"
+    },
+    {
+      "id":"2",
+      "label": "API Development",
+      "service": "Custom Software Development, API Development, Data Engineering, Infrastructure & DevOps, AI Development",
+      "description":
+        "HisCoder offers API development services that ensure seamless integration of various systems and applications within your enterprise. We create secure, scalable, and efficient APIs that help your existing software communicate effectively, simplifying processes and saving time. Whether you need to connect with third-party services or develop a custom API, we deliver solutions that are easy to manage and cost-effective."
+    },
+    {
+      "id":"3",
+      "label": "Data engineering",
+      "service": "Custom Software Development, API Development, Data Engineering, Infrastructure & DevOps, AI Development",
+      "description":
+        "HisCoder's data engineering services help you unlock the full potential of your data. We build and maintain efficient data pipelines that transform raw data into valuable insights, empowering you to make informed decisions. From setting up data warehouses to developing big data solutions, we provide the expertise needed to manage your data effectively without overwhelming your resources."
+    },
+    {
+      "id":"4",
+      "label": "Infrastructure & DevOps",
+      "service": "Custom Software Development, API Development, Data Engineering, Infrastructure & DevOps, AI Development",
+      "description":
+        "At HisCoder, we understand the unique challenges enterprises face when it comes to IT infrastructure and deployment. Our Infrastructure & DevOps services focus on streamlining your software development and operations, offering cloud solutions, automation, and CI/CD pipelines that improve efficiency and reduce costs. We help bridge the gap between development and operations, ensuring your business can innovate and scale without unnecessary complexity."
+    },
+    {
+      "id":"5",
+      "label": "Mobile app development",
+      "service": "Custom Software Development, API Development, Data Engineering, Infrastructure & DevOps, AI Development",
+      "description":
+        "HisCoder brings your mobile app ideas to life with a focus on delivering high-quality, cost-effective solutions for your enterprise. Our team develops intuitive, user-friendly apps for iOS and Android platforms that help you reach and engage your customers effectively. Whether you're launching a new app or enhancing an existing one, we provide end-to-end development services that align with your business objectives and budget"
+    },
+    {
+      "id":"6",
+      "label": "AI development",
+      "service": "Custom Software Development, API Development, Data Engineering, Infrastructure & DevOps, AI Development",
+      "description":
+        "HisCoder makes artificial intelligence accessible to your business with our AI development services. We create AI solutions that automate tasks, enhance customer interactions, and provide valuable insights, all tailored to your enterprise's scale and needs. Whether you're looking to implement machine learning, natural language processing, or predictive analytics, our team delivers solutions that are both innovative and affordable, helping you stay competitive in your industry"
+    }
+  ]
