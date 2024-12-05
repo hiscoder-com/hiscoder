@@ -15,6 +15,7 @@ export default {
       red,
       green,
       transparent,
+      appBarBtn: '#049045',
       bgHeader: '#EBEBEB',
       basic: '#1A1A1A',
       buttonGroup: '#AFAFAF4D',
@@ -26,7 +27,7 @@ export default {
     extend: {
       screens: {
         lg: '1134px',
-        '1024': '1025px',
+        1024: '1025px',
         '2xl': '1923px',
       },
 
