@@ -2,7 +2,7 @@ import { useEffect, useLayoutEffect, useRef } from 'react'
 
 import appBarButtons from '../../data/appBarButtons.json'
 
-function AppBar() {
+function AppBar({ handleClickToButton }) {
   const AppBarRef = useRef(null)
 
   useEffect(() => {
@@ -75,7 +75,7 @@ function AppBar() {
       className="animation-timeline top-10 z-30 hidden animate-emergence items-center gap-2.5 rounded-full bg-buttonGroup backdrop-blur-3xl sm:absolute sm:top-[52vw] sm:flex sm:p-[0.53vw] lg:top-[48vw] lg:p-[0.32vw] 2xl:top-[49vw] 2xl:p-[0.175vw]"
     >
       <a
-        className="bg-appBarBtn flex items-center justify-center rounded-full sm:h-[4.95vw] sm:w-[6vw] lg:h-[4.43vw] lg:w-[6.1vw] 2xl:h-[2.53vw] 2xl:w-[3.3vw]"
+        className="flex items-center justify-center rounded-full bg-appBarBtn sm:h-[4.95vw] sm:w-[6vw] lg:h-[4.43vw] lg:w-[6.1vw] 2xl:h-[2.53vw] 2xl:w-[3.3vw]"
         href="#"
       >
         <img
@@ -87,8 +87,9 @@ function AppBar() {
       {appBarButtons.map(({ label, href }, index) => (
         <a
           key={index}
-          className="last:bg-appBarBtn active:bg-appBarBtn lg:hover:bg-appBarBtn flex items-center justify-center whitespace-nowrap rounded-full bg-transparent font-bold text-white duration-150 active:duration-150 sm:h-[4.95vw] sm:px-[1.86vw] sm:text-[1.42vw] lg:h-[4.43vw] lg:px-[1.6vw] lg:text-[1.1vw] lg:hover:duration-150 lg:active:bg-transparent 2xl:h-[2.53vw] 2xl:px-[0.88vw] 2xl:text-[0.61vw]"
+          className="flex items-center justify-center whitespace-nowrap rounded-full bg-transparent font-bold text-white duration-150 last:bg-appBarBtn active:bg-appBarBtn active:duration-150 sm:h-[4.95vw] sm:px-[1.86vw] sm:text-[1.42vw] lg:h-[4.43vw] lg:px-[1.6vw] lg:text-[1.1vw] lg:hover:bg-appBarBtn lg:hover:duration-150 lg:active:bg-transparent 2xl:h-[2.53vw] 2xl:px-[0.88vw] 2xl:text-[0.61vw]"
           href={href}
+          onClick={() => handleClickToButton(label)}
         >
           {label}
         </a>

@@ -188,7 +188,7 @@ function Projects({
         <ModalWindow
           onCloseModal={handleCloseModal}
           modalIsOpen={modalIsOpen}
-          label={label}
+          label={`Our services / ${label}`}
           preventScroll={true}
           overlay={overlay}
           modalWindow={modalWindow}
