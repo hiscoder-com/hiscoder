@@ -8,13 +8,14 @@ export function SelectedText() {
   )
 }
 
-const textClasses = 'text-[5.13vw] leading-[5.65vw] sm:text-[1.4vw] sm:leading-[1.5vw]'
+const textClasses =
+  'animation-timeline animate-emergence text-[5.13vw] leading-[5.65vw] sm:text-[2.08vw] lg:text-[1.86vw] 2xl:text-[1.4vw] sm:leading-[2.4vw] 2xl:text-[1.4vw] 2xl:leading-[1.5vw]'
 
 function About() {
   return (
-    <div className="block justify-between px-[5.15vw] pt-[10.25vw] sm:flex sm:px-[4.37vw] sm:pt-[5.22vw] lg:pt-[3vw] 2xl:pt-[2.91vw]">
+    <div className="block justify-between px-[5.15vw] pt-[10.25vw] sm:flex sm:gap-1 sm:px-[4.37vw] sm:pt-[5.22vw] lg:pt-[3vw] 2xl:pt-[2.91vw]">
       <div>
-        <h3 className="text-[10.26vw] leading-[4.5vw] sm:text-[3.72vw]">
+        <h3 className="animation-timeline animate-emergence text-[10.3vw] leading-[4.7vw] delay-1000 sm:text-[5vw] lg:text-[3.72vw] lg:leading-[3.8vw]">
           About <br className="hidden sm:block" /> HisCoder
         </h3>
         <div className="hidden sm:block">
@@ -32,7 +33,7 @@ function About() {
               that advance the Kingdom of God and help spread the Gospel worldwide.
             </p>
           </div>
-          <div className="mt-[5.13vw] flex items-start gap-2.5 sm:mt-[1.16vw] sm:gap-[1vw]">
+          <div className="mt-[5.13vw] flex items-start gap-2.5 sm:mt-[3vw] sm:gap-[1vw]">
             <img src="/img/cross.svg" alt="book icon" className="sm:w-[7.47vw]" />
             <p className={`${textClasses}`}>
               Rooted in faith and driven by excellence, we specialize in creating
@@ -43,7 +44,7 @@ function About() {
               designed with purpose, passion, and dedication to glorifying God.
             </p>
           </div>
-          <div className="mt-[5.13vw] flex items-start gap-2.5 sm:mt-[1.16vw] sm:gap-[1vw]">
+          <div className="mt-[5.13vw] flex items-start gap-2.5 sm:mt-[3vw] sm:gap-[1vw]">
             <img src="/img/flash.svg" alt="book icon" className="sm:w-[4.04vw]" />
             <p className={`${textClasses}`}>
               With a commitment to excellence, we deliver{' '}
@@ -59,7 +60,7 @@ function About() {
         <div className="sm:hidden">
           <SelectedText />
         </div>
-        <div className="pl-0 sm:pl-[2.42vw]">
+        <div className="pl-0 sm:mt-[3vw] sm:pl-[2.42vw]">
           <p className={`${textClasses}`}>
             At HisCoder.com, technology meets mission, innovation fuels impact, and
             together, we work to bring light to the digital world.
