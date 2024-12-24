@@ -29,7 +29,7 @@ function Header() {
 
   return (
     <header className="relative flex w-full flex-col items-center px-5 pb-[40vw] sm:bg-bgHeader sm:px-0 sm:pb-[6.5vw] lg:pb-[5.2vw] 2xl:pb-[8.36vw]">
-      <MobileAppBar />
+      <MobileAppBar handleClickToButton={handleClickToButton} />
       <h1 className="title-gradient mt-24 hidden animate-descent select-none bg-clip-text font-sans text-[20vw] font-black not-italic leading-none text-transparent duration-500 sm:mt-0 sm:block">
         HisCoder
       </h1>
