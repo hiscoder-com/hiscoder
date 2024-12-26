@@ -19,7 +19,13 @@ function Header() {
     }, 0)
   }
 
-  const handleCloseModal = () => {
+  const handleCloseModal = (link) => {
+    if (link) {
+      const contactUs = document.getElementById('contactUs')
+      if (contactUs) {
+        contactUs.scrollIntoView()
+      }
+    }
     setTimeout(() => {
       setIsShowAbout(false)
     }, 600)

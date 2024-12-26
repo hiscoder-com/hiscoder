@@ -51,7 +51,7 @@ function Projects({
     if (link) {
       const contactUs = document.getElementById('contactUs')
       if (contactUs) {
-        contactUs.scrollIntoView({ behavior: 'smooth' })
+        contactUs.scrollIntoView()
       }
     }
     setTimeout(() => {
