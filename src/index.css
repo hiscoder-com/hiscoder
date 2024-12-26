@@ -53,6 +53,8 @@ body {
 
   color: #1a1a1a;
   background: #f4f4f4;
+
+  overflow-x: hidden;
 }
 
 .title-gradient {

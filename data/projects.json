@@ -3,63 +3,150 @@
         "id": "1",
         "label": "Web development",
         "client": "LEVEL",
-        "img": "img/level_macbook.jpg",
+        "img": "/img/level_macbook.jpg",
         "service": "Custom Software Development, API Development, Infrastructure & DevOps",
         "description1": "LEVEL is a cutting-edge, customizable Translation Management System designed to support any Bible translation method. It can be adapted to various translation approaches and materials. The platform is focused on simplifying the translation process for nations with diverse linguistic backgrounds and varying levels of computer literacy. LEVEL provides a step-by-step workflow for managing translation projects.",
         "description2": "HisCoder takes a comprehensive approach in the development of LEVEL, providing expertise in custom software development, API creation, DevOps, and AI feature development.",
         "title1": "Convenient step-by-step translation system",
-        "title2": "Thoughtful design",
-        "title3": "Distribution of roles and jobs in one place",
+        "title2": "Mobile version",
+        "title3": "Thoughtful design",
+        "title4": "Recognizable corporate identity",
+        "title5": "Distribution of roles and jobs in one place",
         "categories": ["Custom Software", "API Development", "Infrastructure & DevOps"],
         "link": "https://level.bible/",
-        "screenshots": {
-            "desktop": "img/level_desktop.png",
-            "iPhone": "img/level_iphone15.png",
-            "pages": "img/level_bg.png",
-            "logo": "img/level_logo.svg",
-            "advantage": "img/level_advantage.png"
+        "images": {
+            "first": "/img/level_desktop.png",
+            "second": "/img/level_iphone15.png",
+            "third": "/img/level_bg.png",
+            "fourth": "/img/level_logo.svg",
+            "fifth": "/img/level_advantage.png"
+        },
+        "backgrounds": {
+            "bg_first": "/img/bg_first.jpg",
+            "bg_second": "/img/bg_first.jpg",
+            "bg_third": "/img/bg_first.jpg",
+            "bg_fourth": "/img/bg_first.jpg",
+            "bg_fifth": "/img/bg_first.jpg"
         }
     },
     {
         "id": "2",
         "label": "Web development",
         "client": "BibleVis",
-        "img": "img/bibleVis.jpg",
+        "img": "/img/bibleVis.jpg",
         "service": "Custom Software Development, API Development, Infrastructure & DevOps",
         "description1": "BibleVis is an innovative platform dedicated to making Bible stories and Christian concepts more accessible and visually engaging. Through the use of advanced AI technology, we create high-quality, AI-generated images based on Bible themes, providing a unique and creative way to experience the richness of Scripture.",
         "description2": "",
-        "title1": "Convenient step-by-step translation system",
-        "title2": "Thoughtful design",
-        "title3": "Distribution of roles and jobs in one place",
+        "title1": "Stock Image Platform",
+        "title2": "Mobile version",
+        "title3": "A platform with high-quality content",
+        "title4": "Recognizable corporate identity",
+        "title5": "Distribution of roles and jobs in one place",
         "categories": ["Custom Software", "API Development", "Infrastructure & DevOps"],
         "link": "https://biblevis.com/",
-        "screenshots": {
-            "desktop": "img/bible_vis_desktop.png",
-            "iPhone": "img/bible_vis_iphone15.png",
-            "pages": "img/bible_vis_pages.png",
-            "logo": "img/bible_vis_logo.png",
-            "advantage": "img/bible_vis_advantage.png"
+        "images": {
+            "first": "/img/bible_vis_desktop.png",
+            "second": "/img/bible_vis_iphone15.png",
+            "third": "/img/bible_vis_pages.png",
+            "fourth": "/img/bible_vis_logo.png",
+            "fifth": "/img/bible_vis_advantage.png"
+        },
+        "backgrounds": {
+            "bg_first": "/img/bg_first.jpg",
+            "bg_second": "/img/bg_first.jpg",
+            "bg_third": "/img/bg_first.jpg",
+            "bg_fourth": "/img/bg_first.jpg",
+            "bg_fifth": "/img/bg_first.jpg"
         }
     },
     {
         "id": "3",
         "label": "Web development",
         "client": "Glokas",
-        "img": "img/aidi.jpg",
+        "img": "/img/aidi.jpg",
         "service": "Custom Software Development, API Development, Data Engineering, Infrastructure & DevOps, AI Development",
         "description1": "Glokas is an AI-powered, multifunctional platform for translation, localization, voice processing, and automation. HisCoder employs a holistic approach in developing Glokas' diverse tools, enhancing user experience through advanced automation features that streamline translation workflows, optimize localization processes, and accelerate voice processing tasks. With expertise in custom software development, API integration, DevOps, and AI-driven automation, HisCoder tailors each aspect of Glokas to improve efficiency and scalability for mission-driven organizations.",
         "description2": "",
-        "title1": "Convenient step-by-step translation system",
-        "title2": "Thoughtful design",
-        "title3": "Distribution of roles and jobs in one place",
+        "title1": "A simple tool for translating complex content",
+        "title2": "Mobile version",
+        "title3": "Work-focused design",
+        "title4": "Recognizable corporate identity",
+        "title5": "Distribution of roles and jobs in one place",
         "categories": ["Custom Software", "API Development", "Data engineering", "Infrastructure & DevOps", "AI development"],
         "link": "https://glokas.com/",
-        "screenshots": {
-            "desktop": "img/glokas_desktop.png",
-            "iPhone": "img/glokas_iphone15.png",
-            "pages": "img/glokas_pages.png",
-            "logo": "img/glokas_logo.png",
-            "advantage": "img/glokas_map.png"
+        "images": {
+            "first": "/img/glokas_desktop.png",
+            "second": "/img/glokas_iphone15.png",
+            "third": "/img/glokas_pages.png",
+            "fourth": "/img/glokas_logo.png",
+            "fifth": "/img/glokas_map.png"
+        },
+        "backgrounds": {
+            "bg_first": "/img/bg_first.jpg",
+            "bg_second": "/img/bg_first.jpg",
+            "bg_third": "/img/bg_first.jpg",
+            "bg_fourth": "/img/bg_first.jpg",
+            "bg_fifth": "/img/bg_first.jpg"
+        }
+    },
+    {
+        "id": "4",
+        "label": "Web development",
+        "client": "TranslationCore Toolset",
+        "img": "/img/dcs.jpg",
+        "service": "Custom Software Development, API Development, Data Engineering, Infrastructure & DevOps, AI Development",
+        "description1": "TranslationCore Toolset is a suite of open tools for translating, editing, and reviewing biblical materials. The platform helps translation teams work with Gateway Language resources in multiple languages, enhancing the quality of translation at every stage. The tools support text creation, editing, and revision, ensuring accuracy and cultural adaptation of biblical texts. This project is ideal for organizations involved in Bible translation.",
+        "description2": "",
+        "title1": "Just combining complex tools",
+        "title2": "Mobile version",
+        "title3": "Project development from idea to implementation",
+        "title4": "Unique logo",
+        "title5": "Unique style",
+        "categories": ["Custom Software", "API Development", "Data engineering", "Infrastructure & DevOps", "AI development"],
+        "link": "https://glokas.com/",
+        "images": {
+            "first": "/img/dcs_desktop.png",
+            "second": "/img/dcs_mobile_version.png",
+            "third": "/img/dcs_pages.png",
+            "fourth": "/img/dcs_logo.png",
+            "fifth": "/img/dcs_map.png"
+        },
+        "backgrounds": {
+            "bg_first": "/img/bg_first.jpg",
+            "bg_second": "/img/bg_first.jpg",
+            "bg_third": "/img/bg_first.jpg",
+            "bg_fourth": "/img/bg_first.jpg",
+            "bg_fifth": "/img/bg_first.jpg"
+        }
+    },
+    {
+        "id": "5",
+        "label": "Web development",
+        "client": "Open Components Ecosystem (OCE)",
+        "img": "/img/oce.jpg",
+        "service": "Custom Software Development, API Development, Data Engineering, Infrastructure & DevOps, AI Development",
+        "description1": "Open Components Ecosystem (OCE) is an open platform for creating, sharing, and collaborating on reusable components for Bible-related tools. It fosters innovation in biblical technology by allowing developers to contribute to a global community, supporting Bible translation and study. OCE provides resources, components, and integration tools, promoting open standards for efficiency and compatibility. It accelerates the development of biblical technologies and makes resources more accessible worldwide.",
+        "description2": "",
+        "title1": "An accessible online platform for developers",
+        "title2": "Collect what you want",
+        "title3": "Developer Community: Contribute to the Ecosystem",
+        "title4": "Support and Resources for Developers",
+        "title5": "Open source",
+        "categories": ["Custom Software", "API Development", "Data engineering", "Infrastructure & DevOps", "AI development"],
+        "link": "https://glokas.com/",
+        "images": {
+            "first": "/img/oce_1.png",
+            "second": "/img/oce_2.jpg",
+            "third": "/img/oce_3.png",
+            "fourth": "/img/oce_4.png",
+            "fifth": "/img/oce_5.png"
+        },
+        "backgrounds": {
+            "bg_first": "/img/bg-oce.jpg",
+            "bg_second": "/img/bg-oce.jpg",
+            "bg_third": "/img/bg-oce.jpg",
+            "bg_fourth": "/img/bg-oce.jpg",
+            "bg_fifth": "/img/bg-oce.jpg"
         }
     }
 ]

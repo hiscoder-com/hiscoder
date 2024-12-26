@@ -1,5 +1,8 @@
+import { useEffect, useState } from 'react'
+
 import PropTypes from 'prop-types'
 
+import projects from '../../data/projects.json'
 import Projects from './Projects'
 
 function ServiceModal({
@@ -9,6 +12,12 @@ function ServiceModal({
   setShowProjectsModal,
   modalServiceIsOpen,
 }) {
+  const [filteredItems, setFilteredItems] = useState(projects)
+
+  useEffect(() => {
+    setFilteredItems(projects.filter((project) => project.categories.includes(label)))
+  }, [])
+
   return (
     <div className="block justify-between px-[5.15vw] pt-[10.25vw] sm:flex sm:px-[3.53vw] sm:pt-[5.22vw] lg:pt-[3vw] 2xl:pt-[2.91vw]">
       <div className="w-full sm:w-4/12 lg:w-[18vw] 2xl:w-3/12">
@@ -27,8 +36,8 @@ function ServiceModal({
           Related Projects
         </h5>
         <Projects
+          filteredItems={filteredItems}
           location={'services'}
-          category={label}
           modalServiceIsOpen={modalServiceIsOpen}
           setShowProjectsModal={setShowProjectsModal}
         />
