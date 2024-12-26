@@ -19,7 +19,7 @@ function Header() {
     }, 0)
   }
 
-  const handleCloseModal = (link) => {
+  const handleCloseModal = (_, link) => {
     setTimeout(() => {
       setIsShowAbout(false)
     }, 600)

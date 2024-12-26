@@ -29,7 +29,7 @@ function Services() {
     }, 0)
   }, [])
 
-  const handleCloseModal = (link) => {
+  const handleCloseModal = (_, link) => {
     setTimeout(() => {
       html.classList.remove('overflow-hidden')
       setShowProjectsModal(false)
