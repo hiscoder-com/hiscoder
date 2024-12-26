@@ -60,9 +60,8 @@ function ModalWindow({
           Do you have a similar project?
         </p>
         <a
-          // href="#contactUs"
-          onClick={() => onCloseModal('#contactUs')}
-          onTouchEnd={() => onCloseModal('#contactUs')}
+          href="#contactUs"
+          onClick={onCloseModal}
           className="animation-timeline mt-[5.15vw] block animate-emergence text-center text-[5.15vw] text-basic underline sm:mt-[1.77vw] sm:text-[2.65vw] lg:mt-[0.5vw] lg:text-[2.2vw] 2xl:mt-[0.59vw] 2xl:text-[1.4vw]"
         >
           Contact us
@@ -83,7 +82,7 @@ function ModalWindow({
 ModalWindow.propTypes = {
   modalIsOpen: PropTypes.bool.isRequired,
   onCloseModal: PropTypes.func.isRequired,
-  children: PropTypes.element.isRequired,
+  children: PropTypes.oneOfType([PropTypes.element, PropTypes.array]).isRequired,
   label: PropTypes.string.isRequired,
 }
 
