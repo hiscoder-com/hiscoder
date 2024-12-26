@@ -22,6 +22,8 @@ function ModalWindow({
   const handleNavigation = (e) => {
     e.preventDefault()
 
+    onCloseModal()
+
     const href = e.currentTarget.getAttribute('href')
     if (href && href.startsWith('#contactUs')) {
       const targetElement = document.querySelector(href)
