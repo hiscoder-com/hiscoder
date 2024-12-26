@@ -61,7 +61,7 @@ function Projects({
           contactUs.scrollIntoView()
         }
       }
-    }, 200)
+    }, 500)
   }
 
   useEffect(() => {
