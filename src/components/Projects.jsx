@@ -47,12 +47,21 @@ function Projects({
     }, 0)
   }, [])
 
-  const handleCloseModal = () => {
+  const handleCloseModal = (_, link) => {
     setTimeout(() => {
       setModalIsOpen(false)
     }, 600)
     setModalWindow('translate-y-full')
     setOverlay('opacity-0 delay-200')
+
+    setTimeout(() => {
+      if (link) {
+        const contactUs = document.getElementById('contactUs')
+        if (contactUs) {
+          contactUs.scrollIntoView()
+        }
+      }
+    }, 100)
   }
 
   useEffect(() => {
