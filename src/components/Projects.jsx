@@ -47,7 +47,13 @@ function Projects({
     }, 0)
   }, [])
 
-  const handleCloseModal = () => {
+  const handleCloseModal = (link) => {
+    if (link) {
+      const contactUs = document.getElementById('contactUs')
+      if (contactUs) {
+        contactUs.scrollIntoView({ behavior: 'smooth' })
+      }
+    }
     setTimeout(() => {
       setModalIsOpen(false)
     }, 600)
