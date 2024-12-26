@@ -29,7 +29,6 @@ function ModalWindow({
         targetElement.scrollIntoView({ behavior: 'smooth' })
       }
     }
-    onCloseModal()
   }
 
   return (
