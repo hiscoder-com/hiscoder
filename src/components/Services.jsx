@@ -29,7 +29,7 @@ function Services() {
     }, 0)
   }, [])
 
-  const handleCloseModal = () => {
+  const handleCloseModal = (link) => {
     setTimeout(() => {
       html.classList.remove('overflow-hidden')
       setShowProjectsModal(false)
@@ -37,6 +37,15 @@ function Services() {
     }, 600)
     setModalWindow('translate-y-full')
     setOverlay('opacity-0 delay-200')
+
+    setTimeout(() => {
+      if (link) {
+        const contactUs = document.getElementById('contactUs')
+        if (contactUs) {
+          contactUs.scrollIntoView()
+        }
+      }
+    }, 500)
   }
 
   const [id, setId] = useState('1')
