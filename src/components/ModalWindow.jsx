@@ -19,6 +19,18 @@ function ModalWindow({
     return () => document.body.classList.remove('overflow-hidden')
   }, [modalIsOpen])
 
+  const handleNavigation = (e) => {
+    e.preventDefault()
+
+    const href = e.currentTarget.getAttribute('href')
+    if (href && href.startsWith('#contactUs')) {
+      const targetElement = document.querySelector(href)
+      if (targetElement) {
+        targetElement.scrollIntoView({ behavior: 'smooth' })
+      }
+    }
+  }
+
   return (
     <Modal
       isOpen={modalIsOpen}
@@ -62,6 +74,7 @@ function ModalWindow({
         <a
           href="#contactUs"
           onClick={onCloseModal}
+          onTouchEnd={handleNavigation}
           className="animation-timeline mt-[5.15vw] block animate-emergence text-center text-[5.15vw] text-basic underline sm:mt-[1.77vw] sm:text-[2.65vw] lg:mt-[0.5vw] lg:text-[2.2vw] 2xl:mt-[0.59vw] 2xl:text-[1.4vw]"
         >
           Contact us
