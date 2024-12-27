@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types'
+
 function MobileAppBar({ handleClickToButton }) {
   return (
     <div className="fixed left-0 top-10 z-40 flex w-full items-center justify-between px-5 sm:hidden">
@@ -21,6 +23,10 @@ function MobileAppBar({ handleClickToButton }) {
       </a>
     </div>
   )
+}
+
+MobileAppBar.propTypes = {
+  handleClickToButton: PropTypes.func.isRequired,
 }
 
 export default MobileAppBar

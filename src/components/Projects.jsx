@@ -69,7 +69,11 @@ function Projects({ location, filteredItems, setShowProjectsModal }) {
       const rect = slider.getBoundingClientRect()
       const mouseX = e.clientX - rect.left
       const percent = (mouseX / rect.width - 0.5) * 6
-      slider.style.transform = `translateX(${-percent * 10}%) scale(1.5) translateY(14%)`
+
+      slider.style.transform =
+        location === 'gallery'
+          ? `translateX(${-percent * 10}%) scale(1.5) translateY(14%)`
+          : `translateX(${-percent * 27}%) scale(2.5) translateY(28%)`
       setIsHiddenDescription(false)
     }
   }
@@ -81,7 +85,8 @@ function Projects({ location, filteredItems, setShowProjectsModal }) {
     slider.style.transform = 'scale(1)'
   }
 
-  const height = isHiddenDescription ? 'lg:h-[13.5vw]' : 'lg:h-[28vw] 2xl:h-[25vw]'
+  const heightService = isHiddenDescription ? 'lg:h-[7.2vw]' : 'lg:h-[23vw] 2xl:h-[25vw]'
+  const heightGallery = isHiddenDescription ? 'lg:h-[13.5vw]' : 'lg:h-[28vw] 2xl:h-[25vw]'
 
   return (
     <>
@@ -92,10 +97,10 @@ function Projects({ location, filteredItems, setShowProjectsModal }) {
             ref={sliderRef}
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
-            className={`${height} animation-timeline relative mt-[39.2vw] w-full animate-emergence overflow-hidden duration-200 sm:mt-[5.03vw] lg:mt-[1.57vw]`}
+            className={`${heightService} animation-timeline relative w-full animate-emergence overflow-hidden duration-200 sm:mt-[5.03vw] lg:mt-[2.61vw] lg:w-[56.3vw] lg:pr-[3.5vw] 2xl:mt-[1.46vw]`}
           >
             <motion.div initial={{ x: 0 }} animate={{ x: 0 }}>
-              <motion.div className="flex flex-col sm:flex-row sm:flex-wrap sm:gap-2.5 lg:flex-nowrap">
+              <motion.div className="flex flex-col sm:flex-row sm:flex-wrap sm:gap-x-[1vw] sm:gap-y-[5vw] lg:flex-nowrap lg:gap-[0.3vw]">
                 {filteredItems.map((project, index) => (
                   <Project
                     key={index}
@@ -103,6 +108,7 @@ function Projects({ location, filteredItems, setShowProjectsModal }) {
                     handleClick={handleClick}
                     color={color}
                     isHiddenDescription={isHiddenDescription}
+                    location={location}
                   />
                 ))}
               </motion.div>
@@ -124,10 +130,10 @@ function Projects({ location, filteredItems, setShowProjectsModal }) {
           ref={sliderRef}
           onMouseMove={handleMouseMove}
           onMouseLeave={handleMouseLeave}
-          className={`${height} animation-timeline relative mt-[39.2vw] w-full animate-emergence overflow-hidden duration-200 sm:mt-[5.03vw] lg:mt-[1.57vw]`}
+          className={`${heightGallery} animation-timeline relative mt-[43vw] w-full animate-emergence overflow-hidden duration-200 sm:mt-[5.03vw] lg:mt-[1.57vw]`}
         >
           <motion.div initial={{ x: 0 }} animate={{ x: 0 }}>
-            <motion.div className="flex flex-col sm:flex-row sm:flex-wrap sm:gap-2.5 lg:flex-nowrap">
+            <motion.div className="flex flex-col gap-y-[12vw] sm:flex-row sm:flex-wrap sm:gap-x-[1vw] sm:gap-y-[5vw] lg:flex-nowrap">
               {filteredItems.map((project, index) => (
                 <Project
                   key={index}
@@ -135,6 +141,7 @@ function Projects({ location, filteredItems, setShowProjectsModal }) {
                   handleClick={handleClick}
                   color={color}
                   isHiddenDescription={isHiddenDescription}
+                  location={location}
                 />
               ))}
             </motion.div>
@@ -168,8 +175,6 @@ function Projects({ location, filteredItems, setShowProjectsModal }) {
 Projects.propTypes = {
   location: PropTypes.string.isRequired,
   filteredItems: PropTypes.array,
-  category: PropTypes.string,
-  modalServiceIsOpen: PropTypes.bool,
   setShowProjectsModal: PropTypes.func,
 }
 

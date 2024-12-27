@@ -1,5 +1,7 @@
 import { useEffect, useLayoutEffect, useRef } from 'react'
 
+import PropTypes from 'prop-types'
+
 import appBarButtons from '../../data/appBarButtons.json'
 
 function AppBar({ handleClickToButton }) {
@@ -107,6 +109,10 @@ function AppBar({ handleClickToButton }) {
       ))}
     </div>
   )
+}
+
+AppBar.propTypes = {
+  handleClickToButton: PropTypes.func.isRequired,
 }
 
 export default AppBar

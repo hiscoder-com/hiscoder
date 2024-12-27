@@ -84,6 +84,8 @@ ModalWindow.propTypes = {
   onCloseModal: PropTypes.func.isRequired,
   children: PropTypes.oneOfType([PropTypes.element, PropTypes.array]).isRequired,
   label: PropTypes.string.isRequired,
+  overlay: PropTypes.string.isRequired,
+  modalWindow: PropTypes.string.isRequired,
 }
 
 export default ModalWindow
