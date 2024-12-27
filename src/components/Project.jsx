@@ -1,31 +1,33 @@
 import PropTypes from 'prop-types'
 
+import { LOCATION } from '../constants/constants.js'
+
 function Project({ project, handleClick, color, isHiddenDescription, location }) {
   const hiddenDescription = isHiddenDescription ? 'lg:opacity-0' : 'lg:opacity-100'
 
   const fontSizeTitle =
-    location === 'services'
+    location === LOCATION.SRV
       ? 'text-[3.08vw] sm:text-[1.07vw] lg:text-[0.25vw] 2xl:text-[0.25vw]'
       : 'text-[3.08vw] sm:text-[1.07vw] lg:text-[0.5vw] 2xl:text-[0.35vw]'
 
   const fontSizeClient =
-    location === 'services'
+    location === LOCATION.SRV
       ? 'text-[4.1vw] sm:text-[1.25vw] lg:text-[0.3vw]'
       : 'text-[4.1vw] sm:text-[1.25vw] lg:text-[0.6vw] 2xl:text-[0.47vw]'
 
   const fontSizeService =
-    location === 'services'
+    location === LOCATION.SRV
       ? 'text-[3.59vw] sm:text-[1.25vw] lg:text-[0.3vw]'
       : 'text-[3.59vw] sm:text-[1.25vw] lg:text-[0.6vw] 2xl:text-[0.47vw]'
 
   const widthItem =
-    location === 'services' ? 'sm:w-[42vw] lg:w-1/5' : 'sm:w-[43.43vw] lg:w-1/5'
+    location === LOCATION.SRV ? 'sm:w-[42vw] lg:w-1/5' : 'sm:w-[43.43vw] lg:w-1/5'
 
   const marginDescription =
-    location === 'services' ? 'mt-[5.14vw] sm:mt-[0.4vw]' : 'mt-[5.14vw] sm:mt-[1.04vw]'
+    location === LOCATION.SRV ? 'mt-[5.14vw] sm:mt-[0.4vw]' : 'mt-[5.14vw] sm:mt-[1.04vw]'
 
   const marginClientService =
-    location === 'services'
+    location === LOCATION.SRV
       ? 'mt-[2vw] sm:mt-[0.4vw]'
       : 'mt-[2vw] sm:mt-[1.33vw] lg:mt-[0.79vw] 2xl:mt-[0.44vw]'
 

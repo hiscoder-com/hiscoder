@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import PropTypes from 'prop-types'
 import { useDispatch, useSelector } from 'react-redux'
 
+import { LOCATION } from '../constants/constants.js'
 import { selectProject } from '../redux/actions'
 import { selectProjectSelector } from '../redux/selectors'
 import ModalWindow from './ModalWindow'
@@ -27,13 +28,13 @@ function Projects({ location, filteredItems, setShowProjectsModal }) {
   const [isHiddenDescription, setIsHiddenDescription] = useState(true)
 
   useEffect(() => {
-    setColor(location === 'gallery' ? { color: 'white' } : {})
+    setColor(location === LOCATION.GAL ? { color: 'white' } : {})
   }, [location])
 
   const handleClick = useCallback((project) => {
     dispatch(selectProject(project))
     {
-      location !== 'gallery' && setShowProjectsModal(true)
+      location !== LOCATION.GAL && setShowProjectsModal(true)
     }
     setLabel(project.label)
     setModalIsOpen(true)
@@ -71,7 +72,7 @@ function Projects({ location, filteredItems, setShowProjectsModal }) {
       const percent = (mouseX / rect.width - 0.5) * 6
 
       slider.style.transform =
-        location === 'gallery'
+        location === LOCATION.GAL
           ? `translateX(${-percent * 10}%) scale(1.5) translateY(14%)`
           : `translateX(${-percent * 27}%) scale(2.5) translateY(28%)`
       setIsHiddenDescription(false)
@@ -90,7 +91,7 @@ function Projects({ location, filteredItems, setShowProjectsModal }) {
 
   return (
     <>
-      {location === 'services' &&
+      {location === LOCATION.SRV &&
         filteredItems !== undefined &&
         filteredItems.length > 0 && (
           <div
@@ -115,7 +116,7 @@ function Projects({ location, filteredItems, setShowProjectsModal }) {
             </motion.div>
           </div>
         )}
-      {location === 'services' &&
+      {location === LOCATION.SRV &&
         filteredItems !== undefined &&
         filteredItems.length === 0 && (
           <div className="flex w-full justify-center pt-[20vw] sm:pt-[10vw]">
@@ -125,7 +126,7 @@ function Projects({ location, filteredItems, setShowProjectsModal }) {
             </p>
           </div>
         )}
-      {location === 'gallery' && filteredItems.length > 0 && (
+      {location === LOCATION.GAL && filteredItems.length > 0 && (
         <div
           ref={sliderRef}
           onMouseMove={handleMouseMove}
@@ -133,7 +134,7 @@ function Projects({ location, filteredItems, setShowProjectsModal }) {
           className={`${heightGallery} animation-timeline relative mt-[43vw] w-full animate-emergence overflow-hidden duration-200 sm:mt-[5.03vw] lg:mt-[1.57vw]`}
         >
           <motion.div initial={{ x: 0 }} animate={{ x: 0 }}>
-            <motion.div className="flex flex-col gap-y-[12vw] sm:flex-row sm:flex-wrap sm:gap-x-[1vw] sm:gap-y-[5vw] lg:flex-nowrap">
+            <motion.div className="flex flex-col gap-y-[12vw] sm:flex-row sm:flex-wrap sm:gap-x-[1vw] sm:gap-y-[5vw] lg:flex-nowrap lg:gap-[0.4vw]">
               {filteredItems.map((project, index) => (
                 <Project
                   key={index}
@@ -148,7 +149,7 @@ function Projects({ location, filteredItems, setShowProjectsModal }) {
           </motion.div>
         </div>
       )}
-      {location === 'gallery' && filteredItems.length === 0 && (
+      {location === LOCATION.GAL && filteredItems.length === 0 && (
         <div className="flex w-full items-center justify-center sm:min-h-[89.022vw] lg:min-h-[29.8vw] 2xl:min-h-[22vw]">
           <p className="text-[1.95vw] text-white lg:text-[1.15vw] 2xl:text-[0.82vw]">
             No projects here at the moment, but we&apos;re always ready to discuss your

@@ -14,19 +14,13 @@
         "title5": "Distribution of roles and jobs in one place",
         "categories": ["Custom Software", "API Development", "Infrastructure & DevOps"],
         "link": "https://level.bible/",
+        "colorTitle": "#1A1A1A",
         "images": {
-            "first": "/img/level_desktop.png",
-            "second": "/img/level_iphone15.png",
-            "third": "/img/level_bg.png",
-            "fourth": "/img/level_logo.svg",
-            "fifth": "/img/level_advantage.png"
-        },
-        "backgrounds": {
-            "bg_first": "/img/bg_first.jpg",
-            "bg_second": "/img/bg_first.jpg",
-            "bg_third": "/img/bg_first.jpg",
-            "bg_fourth": "/img/bg_first.jpg",
-            "bg_fifth": "/img/bg_first.jpg"
+            "first": "/img/level_desktop.jpg",
+            "second": "/img/level_iphone15.jpg",
+            "third": "/img/level_bg.jpg",
+            "fourth": "/img/level_logo.jpg",
+            "fifth": "/img/level_advantage.jpg"
         }
     },
     {
@@ -44,19 +38,13 @@
         "title5": "Distribution of roles and jobs in one place",
         "categories": ["Custom Software", "API Development", "Infrastructure & DevOps"],
         "link": "https://biblevis.com/",
+        "colorTitle": "#1A1A1A",
         "images": {
-            "first": "/img/bible_vis_desktop.png",
-            "second": "/img/bible_vis_iphone15.png",
-            "third": "/img/bible_vis_pages.png",
-            "fourth": "/img/bible_vis_logo.png",
-            "fifth": "/img/bible_vis_advantage.png"
-        },
-        "backgrounds": {
-            "bg_first": "/img/bg_first.jpg",
-            "bg_second": "/img/bg_first.jpg",
-            "bg_third": "/img/bg_first.jpg",
-            "bg_fourth": "/img/bg_first.jpg",
-            "bg_fifth": "/img/bg_first.jpg"
+            "first": "/img/bible_vis_desktop.jpg",
+            "second": "/img/bible_vis_iphone15.jpg",
+            "third": "/img/bible_vis_pages.jpg",
+            "fourth": "/img/bible_vis_logo.jpg",
+            "fifth": "/img/bible_vis_advantage.jpg"
         }
     },
     {
@@ -74,19 +62,13 @@
         "title5": "Distribution of roles and jobs in one place",
         "categories": ["Custom Software", "API Development", "Data engineering", "Infrastructure & DevOps", "AI development"],
         "link": "https://glokas.com/",
+        "colorTitle": "#1A1A1A",
         "images": {
-            "first": "/img/glokas_desktop.png",
-            "second": "/img/glokas_iphone15.png",
-            "third": "/img/glokas_pages.png",
-            "fourth": "/img/glokas_logo.png",
-            "fifth": "/img/glokas_map.png"
-        },
-        "backgrounds": {
-            "bg_first": "/img/bg_first.jpg",
-            "bg_second": "/img/bg_first.jpg",
-            "bg_third": "/img/bg_first.jpg",
-            "bg_fourth": "/img/bg_first.jpg",
-            "bg_fifth": "/img/bg_first.jpg"
+            "first": "/img/glokas_desktop.jpg",
+            "second": "/img/glokas_iphone15.jpg",
+            "third": "/img/glokas_pages.jpg",
+            "fourth": "/img/glokas_logo.jpg",
+            "fifth": "/img/glokas_map.jpg"
         }
     },
     {
@@ -103,20 +85,14 @@
         "title4": "Unique logo",
         "title5": "Unique style",
         "categories": ["Custom Software", "API Development", "Data engineering", "Infrastructure & DevOps", "AI development"],
-        "link": "https://glokas.com/",
+        "link": "https://git.door43.org/",
+        "colorTitle": "#1A1A1A",
         "images": {
-            "first": "/img/dcs_desktop.png",
-            "second": "/img/dcs_mobile_version.png",
-            "third": "/img/dcs_pages.png",
-            "fourth": "/img/dcs_logo.png",
-            "fifth": "/img/dcs_map.png"
-        },
-        "backgrounds": {
-            "bg_first": "/img/bg_first.jpg",
-            "bg_second": "/img/bg_first.jpg",
-            "bg_third": "/img/bg_first.jpg",
-            "bg_fourth": "/img/bg_first.jpg",
-            "bg_fifth": "/img/bg_first.jpg"
+            "first": "/img/dcs_desktop.jpg",
+            "second": "/img/dcs_mobile_version.jpg",
+            "third": "/img/dcs_pages.jpg",
+            "fourth": "/img/dcs_logo.jpg",
+            "fifth": "/img/dcs_map.jpg"
         }
     },
     {
@@ -133,20 +109,14 @@
         "title4": "Support and Resources for Developers",
         "title5": "Open source",
         "categories": ["Custom Software", "API Development", "Data engineering", "Infrastructure & DevOps", "AI development"],
-        "link": "https://glokas.com/",
+        "link": "https://opencomponents.io/",
+        "colorTitle": "#FFFFFF",
         "images": {
-            "first": "/img/oce_1.png",
+            "first": "/img/oce_1.jpg",
             "second": "/img/oce_2.jpg",
             "third": "/img/oce_3.png",
-            "fourth": "/img/oce_4.png",
-            "fifth": "/img/oce_5.png"
-        },
-        "backgrounds": {
-            "bg_first": "/img/bg-oce.jpg",
-            "bg_second": "/img/bg-oce.jpg",
-            "bg_third": "/img/bg-oce.jpg",
-            "bg_fourth": "/img/bg-oce.jpg",
-            "bg_fifth": "/img/bg-oce.jpg"
+            "fourth": "/img/oce_4.jpg",
+            "fifth": "/img/oce_5.jpg"
         }
     }
 ]
