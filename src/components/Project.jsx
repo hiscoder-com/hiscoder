@@ -33,7 +33,7 @@ function Project({ project, handleClick, color, isHiddenDescription, location })
 
   return (
     <div onClick={() => handleClick(project)} className={`${widthItem} w-full sm:mt-0`}>
-      <img src={project.img} alt={project.client} className="w-full rounded-md" />
+      <img src={project.img} alt={project.client} className="w-full rounded-md" loading="lazy" />
       <div
         className={`block ${marginDescription} sm:flex sm:gap-x-10 lg:w-full lg:gap-x-5 ${hiddenDescription} duration-200`}
       >

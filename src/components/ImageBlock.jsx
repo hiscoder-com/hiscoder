@@ -15,6 +15,7 @@ function ImageBlock({ title, imgSrc, altText, additionalСlasses = '', colorTitl
         src={imgSrc}
         alt={altText}
         className="animation-timeline animate-emergence rounded-md"
+        loading="lazy"
       />
     </div>
   )

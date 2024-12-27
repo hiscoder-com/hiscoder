@@ -1,9 +1,13 @@
-import { useState } from 'react'
+import { lazy, Suspense, useState } from 'react'
 
-import About from './About'
+// import About from './About';
 import AppBar from './AppBar'
 import MobileAppBar from './MobileAppBar'
-import ModalWindow from './ModalWindow'
+
+// import ModalWindow from './ModalWindow'
+
+const About = lazy(() => import('./About'))
+const ModalWindow = lazy(() => import('./ModalWindow'))
 
 function Header() {
   const [isShowAbout, setIsShowAbout] = useState(false)
@@ -66,16 +70,18 @@ function Header() {
 
       <AppBar handleClickToButton={handleClickToButton} />
       {isShowAbout && (
-        <ModalWindow
-          modalIsOpen={isShowAbout}
-          onCloseModal={handleCloseModal}
-          label={'About HisCoder'}
-          preventScroll={true}
-          overlay={overlay}
-          modalWindow={modalWindow}
-        >
-          <About />
-        </ModalWindow>
+        <Suspense>
+          <ModalWindow
+            modalIsOpen={isShowAbout}
+            onCloseModal={handleCloseModal}
+            label={'About HisCoder'}
+            preventScroll={true}
+            overlay={overlay}
+            modalWindow={modalWindow}
+          >
+            <About />
+          </ModalWindow>
+        </Suspense>
       )}
 
       <p

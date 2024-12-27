@@ -36,6 +36,7 @@ function ProjectsModal() {
             className="animation-timeline hidden w-[54.5rem] animate-emergence rounded-md sm:mt-[3vw] sm:block 2xl:mt-[1.46vw]"
             src={img}
             alt={client}
+            loading="lazy"
           />
         </div>
         <div className="mt-[10.3vw] flex w-full flex-col justify-between sm:mt-0 2xl:w-[53.55vw]">
@@ -58,6 +59,7 @@ function ProjectsModal() {
             className="animation-timeline mt-[10.3vw] w-full animate-emergence rounded-md sm:hidden"
             src={img}
             alt={client}
+            loading="lazy"
           />
         </div>
       </div>
