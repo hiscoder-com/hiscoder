@@ -150,7 +150,7 @@ function Projects({ location, filteredItems, setShowProjectsModal }) {
         </div>
       )}
       {location === LOCATION.GAL && filteredItems.length === 0 && (
-        <div className="flex w-full items-center justify-center sm:min-h-[89.022vw] lg:min-h-[29.8vw] 2xl:min-h-[22vw]">
+        <div className="flex w-full items-center justify-center sm:min-h-[42.65vw] lg:min-h-[15.06vw] 2xl:min-h-[15.05vw]">
           <p className="text-[1.95vw] text-white lg:text-[1.15vw] 2xl:text-[0.82vw]">
             No projects here at the moment, but we&apos;re always ready to discuss your
             ideas in this field!
