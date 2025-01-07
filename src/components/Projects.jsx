@@ -27,14 +27,17 @@ function Projects({ location, filteredItems, setShowProjectsModal }) {
   const [label, setLabel] = useState('')
   const [isHiddenDescription, setIsHiddenDescription] = useState(true)
 
+  const isGalLocation = location === LOCATION.GAL
+  const isSrvLocation = location === LOCATION.SRV
+
   useEffect(() => {
-    setColor(location === LOCATION.GAL ? { color: 'white' } : {})
+    setColor(isGalLocation ? { color: 'white' } : {})
   }, [location])
 
   const handleClick = useCallback((project) => {
     dispatch(selectProject(project))
     {
-      location !== LOCATION.GAL && setShowProjectsModal(true)
+      !isGalLocation && setShowProjectsModal(true)
     }
     setLabel(project.label)
     setModalIsOpen(true)
@@ -71,10 +74,9 @@ function Projects({ location, filteredItems, setShowProjectsModal }) {
       const mouseX = e.clientX - rect.left
       const percent = (mouseX / rect.width - 0.5) * 6
 
-      slider.style.transform =
-        location === LOCATION.GAL
-          ? `translateX(${-percent * 10}%) scale(1.5) translateY(14%)`
-          : `translateX(${-percent * 27}%) scale(2.5) translateY(28%)`
+      slider.style.transform = isGalLocation
+        ? `translateX(${-percent * 10}%) scale(1.5) translateY(14%)`
+        : `translateX(${-percent * 27}%) scale(2.5) translateY(28%)`
       setIsHiddenDescription(false)
     }
   }
@@ -91,42 +93,38 @@ function Projects({ location, filteredItems, setShowProjectsModal }) {
 
   return (
     <>
-      {location === LOCATION.SRV &&
-        filteredItems !== undefined &&
-        filteredItems.length > 0 && (
-          <div
-            ref={sliderRef}
-            onMouseMove={handleMouseMove}
-            onMouseLeave={handleMouseLeave}
-            className={`${heightService} animation-timeline relative w-full animate-emergence overflow-hidden duration-200 sm:mt-[5.03vw] lg:mt-[2.61vw] lg:w-[56.3vw] lg:pr-[3.5vw] 2xl:mt-[1.46vw]`}
-          >
-            <motion.div initial={{ x: 0 }} animate={{ x: 0 }}>
-              <motion.div className="flex flex-col sm:flex-row sm:flex-wrap sm:gap-x-[1vw] sm:gap-y-[5vw] lg:flex-nowrap lg:gap-[0.3vw]">
-                {filteredItems.map((project, index) => (
-                  <Project
-                    key={index}
-                    project={project}
-                    handleClick={handleClick}
-                    color={color}
-                    isHiddenDescription={isHiddenDescription}
-                    location={location}
-                  />
-                ))}
-              </motion.div>
+      {isSrvLocation && filteredItems !== undefined && filteredItems.length > 0 && (
+        <div
+          ref={sliderRef}
+          onMouseMove={handleMouseMove}
+          onMouseLeave={handleMouseLeave}
+          className={`${heightService} animation-timeline relative w-full animate-emergence overflow-hidden duration-200 sm:mt-[5.03vw] lg:mt-[2.61vw] lg:w-[56.3vw] lg:pr-[3.5vw] 2xl:mt-[1.46vw]`}
+        >
+          <motion.div initial={{ x: 0 }} animate={{ x: 0 }}>
+            <motion.div className="flex flex-col sm:flex-row sm:flex-wrap sm:gap-x-[1vw] sm:gap-y-[5vw] lg:flex-nowrap lg:gap-[0.3vw]">
+              {filteredItems.map((project, index) => (
+                <Project
+                  key={index}
+                  project={project}
+                  handleClick={handleClick}
+                  color={color}
+                  isHiddenDescription={isHiddenDescription}
+                  location={location}
+                />
+              ))}
             </motion.div>
-          </div>
-        )}
-      {location === LOCATION.SRV &&
-        filteredItems !== undefined &&
-        filteredItems.length === 0 && (
-          <div className="flex w-full justify-center pt-[20vw] sm:pt-[10vw]">
-            <p className="text-center text-[4.1vw] text-basic sm:text-[1.24vw] lg:text-[1.15vw] 2xl:text-[0.82vw]">
-              No projects here at the moment, but we&apos;re always ready to discuss your
-              ideas in this field!
-            </p>
-          </div>
-        )}
-      {location === LOCATION.GAL && filteredItems.length > 0 && (
+          </motion.div>
+        </div>
+      )}
+      {isSrvLocation && filteredItems !== undefined && filteredItems.length === 0 && (
+        <div className="flex w-full justify-center pt-[20vw] sm:pt-[10vw]">
+          <p className="text-center text-[4.1vw] text-basic sm:text-[1.24vw] lg:text-[1.15vw] 2xl:text-[0.82vw]">
+            No projects here at the moment, but we&apos;re always ready to discuss your
+            ideas in this field!
+          </p>
+        </div>
+      )}
+      {isGalLocation && filteredItems.length > 0 && (
         <div
           ref={sliderRef}
           onMouseMove={handleMouseMove}
@@ -149,7 +147,7 @@ function Projects({ location, filteredItems, setShowProjectsModal }) {
           </motion.div>
         </div>
       )}
-      {location === LOCATION.GAL && filteredItems.length === 0 && (
+      {isGalLocation && filteredItems.length === 0 && (
         <div className="flex w-full items-center justify-center sm:min-h-[42.65vw] lg:min-h-[15.06vw] 2xl:min-h-[15.05vw]">
           <p className="text-[1.95vw] text-white lg:text-[1.15vw] 2xl:text-[0.82vw]">
             No projects here at the moment, but we&apos;re always ready to discuss your

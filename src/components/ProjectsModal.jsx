@@ -12,14 +12,10 @@ function ProjectsModal() {
     img,
     description1,
     description2,
-    title1,
-    title2,
-    title3,
-    title4,
-    title5,
+    titles,
     link,
     colorTitle,
-    images: { first, second, third, fourth, fifth },
+    images,
   } = selectedProject
 
   return (
@@ -64,37 +60,17 @@ function ProjectsModal() {
         </div>
       </div>
       <div className="sm:grid sm:grid-cols-2 sm:gap-[0.5vw] 2xl:gap-[0.3vw]">
-        <ImageBlock
-          title={title1}
-          imgSrc={first}
-          altText="MacBook"
-          colorTitle={colorTitle}
-          additionalСlasses="col-start-1 col-end-3"
-        />
-        <ImageBlock
-          title={title2}
-          imgSrc={second}
-          altText="Second image"
-          colorTitle={colorTitle}
-        />
-        <ImageBlock
-          title={title3}
-          imgSrc={third}
-          altText="Pages"
-          colorTitle={colorTitle}
-        />
-        <ImageBlock
-          title={title4}
-          imgSrc={fourth}
-          altText="Logo"
-          colorTitle={colorTitle}
-        />
-        <ImageBlock
-          title={title5}
-          imgSrc={fifth}
-          altText="Advantage"
-          colorTitle={colorTitle}
-        />
+        {titles.map((title, index) => (
+          <ImageBlock
+            key={index}
+            title={title}
+            imgSrc={images[index]}
+            altText={title}
+            colorTitle={colorTitle}
+            additionalClasses="col-start-1 col-end-3"
+            index={index}
+          />
+        ))}
       </div>
     </div>
   )

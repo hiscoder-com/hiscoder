@@ -7,21 +7,22 @@
         "service": "Custom Software Development, API Development, Infrastructure & DevOps",
         "description1": "LEVEL is a cutting-edge, customizable Translation Management System designed to support any Bible translation method. It can be adapted to various translation approaches and materials. The platform is focused on simplifying the translation process for nations with diverse linguistic backgrounds and varying levels of computer literacy. LEVEL provides a step-by-step workflow for managing translation projects.",
         "description2": "HisCoder takes a comprehensive approach in the development of LEVEL, providing expertise in custom software development, API creation, DevOps, and AI feature development.",
-        "title1": "Convenient step-by-step translation system",
-        "title2": "Mobile version",
-        "title3": "Thoughtful design",
-        "title4": "Recognizable corporate identity",
-        "title5": "Distribution of roles and jobs in one place",
+        "titles": [
+            "Convenient step-by-step translation system",
+            "Mobile version", "Thoughtful design",
+            "Recognizable corporate identity",
+            "Distribution of roles and jobs in one place"
+        ],
         "categories": ["Custom Software", "API Development", "Infrastructure & DevOps"],
         "link": "https://level.bible/",
         "colorTitle": "#1A1A1A",
-        "images": {
-            "first": "/img/level_desktop.jpg",
-            "second": "/img/level_iphone15.jpg",
-            "third": "/img/level_bg.jpg",
-            "fourth": "/img/level_logo.jpg",
-            "fifth": "/img/level_advantage.jpg"
-        }
+        "images": [
+            "/img/level_desktop.jpg",
+            "/img/level_iphone15.jpg",
+            "/img/level_bg.jpg",
+            "/img/level_logo.jpg",
+            "/img/level_advantage.jpg"
+        ]
     },
     {
         "id": "2",
@@ -31,21 +32,23 @@
         "service": "Custom Software Development, API Development, Infrastructure & DevOps",
         "description1": "BibleVis is an innovative platform dedicated to making Bible stories and Christian concepts more accessible and visually engaging. Through the use of advanced AI technology, we create high-quality, AI-generated images based on Bible themes, providing a unique and creative way to experience the richness of Scripture.",
         "description2": "",
-        "title1": "Stock Image Platform",
-        "title2": "Mobile version",
-        "title3": "A platform with high-quality content",
-        "title4": "Recognizable corporate identity",
-        "title5": "Distribution of roles and jobs in one place",
+        "titles": [
+            "Stock Image Platform",
+            "Mobile version",
+            "A platform with high-quality content",
+            "Recognizable corporate identity",
+            "Distribution of roles and jobs in one place"
+        ],
         "categories": ["Custom Software", "API Development", "Infrastructure & DevOps"],
         "link": "https://biblevis.com/",
         "colorTitle": "#1A1A1A",
-        "images": {
-            "first": "/img/bible_vis_desktop.jpg",
-            "second": "/img/bible_vis_iphone15.jpg",
-            "third": "/img/bible_vis_pages.jpg",
-            "fourth": "/img/bible_vis_logo.jpg",
-            "fifth": "/img/bible_vis_advantage.jpg"
-        }
+        "images": [
+            "/img/bible_vis_desktop.jpg",
+            "/img/bible_vis_iphone15.jpg",
+            "/img/bible_vis_pages.jpg",
+            "/img/bible_vis_logo.jpg",
+            "/img/bible_vis_advantage.jpg"
+        ]
     },
     {
         "id": "3",
@@ -55,21 +58,23 @@
         "service": "Custom Software Development, API Development, Data Engineering, Infrastructure & DevOps, AI Development",
         "description1": "Glokas is an AI-powered, multifunctional platform for translation, localization, voice processing, and automation. HisCoder employs a holistic approach in developing Glokas' diverse tools, enhancing user experience through advanced automation features that streamline translation workflows, optimize localization processes, and accelerate voice processing tasks. With expertise in custom software development, API integration, DevOps, and AI-driven automation, HisCoder tailors each aspect of Glokas to improve efficiency and scalability for mission-driven organizations.",
         "description2": "",
-        "title1": "A simple tool for translating complex content",
-        "title2": "Mobile version",
-        "title3": "Work-focused design",
-        "title4": "Recognizable corporate identity",
-        "title5": "Distribution of roles and jobs in one place",
+        "titles": [
+            "A simple tool for translating complex content",
+            "Mobile version",
+            "Work-focused design",
+            "Recognizable corporate identity",
+            "Distribution of roles and jobs in one place"
+        ],
         "categories": ["Custom Software", "API Development", "Data engineering", "Infrastructure & DevOps", "AI development"],
         "link": "https://glokas.com/",
         "colorTitle": "#1A1A1A",
-        "images": {
-            "first": "/img/glokas_desktop.jpg",
-            "second": "/img/glokas_iphone15.jpg",
-            "third": "/img/glokas_pages.jpg",
-            "fourth": "/img/glokas_logo.jpg",
-            "fifth": "/img/glokas_map.jpg"
-        }
+        "images": [
+            "/img/glokas_desktop.jpg",
+            "/img/glokas_iphone15.jpg",
+            "/img/glokas_pages.jpg",
+            "/img/glokas_logo.jpg",
+            "/img/glokas_map.jpg"
+        ]
     },
     {
         "id": "4",
@@ -79,21 +84,23 @@
         "service": "Custom Software Development, API Development, Data Engineering, Infrastructure & DevOps, AI Development",
         "description1": "TranslationCore Toolset is a suite of open tools for translating, editing, and reviewing biblical materials. The platform helps translation teams work with Gateway Language resources in multiple languages, enhancing the quality of translation at every stage. The tools support text creation, editing, and revision, ensuring accuracy and cultural adaptation of biblical texts. This project is ideal for organizations involved in Bible translation.",
         "description2": "",
-        "title1": "Just combining complex tools",
-        "title2": "Mobile version",
-        "title3": "Project development from idea to implementation",
-        "title4": "Unique logo",
-        "title5": "Unique style",
+        "titles": [
+            "Just combining complex tools",
+            "Mobile version",
+            "Project development from idea to implementation",
+            "Unique logo",
+            "Unique style"
+        ],
         "categories": ["Custom Software", "API Development", "Data engineering", "Infrastructure & DevOps", "AI development"],
         "link": "https://git.door43.org/",
         "colorTitle": "#1A1A1A",
-        "images": {
-            "first": "/img/dcs_desktop.jpg",
-            "second": "/img/dcs_mobile_version.jpg",
-            "third": "/img/dcs_pages.jpg",
-            "fourth": "/img/dcs_logo.jpg",
-            "fifth": "/img/dcs_map.jpg"
-        }
+        "images": [
+            "/img/dcs_desktop.jpg",
+            "/img/dcs_mobile_version.jpg",
+            "/img/dcs_pages.jpg",
+            "/img/dcs_logo.jpg",
+            "/img/dcs_map.jpg"
+        ]
     },
     {
         "id": "5",
@@ -103,20 +110,22 @@
         "service": "Custom Software Development, API Development, Data Engineering, Infrastructure & DevOps, AI Development",
         "description1": "Open Components Ecosystem (OCE) is an open platform for creating, sharing, and collaborating on reusable components for Bible-related tools. It fosters innovation in biblical technology by allowing developers to contribute to a global community, supporting Bible translation and study. OCE provides resources, components, and integration tools, promoting open standards for efficiency and compatibility. It accelerates the development of biblical technologies and makes resources more accessible worldwide.",
         "description2": "",
-        "title1": "An accessible online platform for developers",
-        "title2": "Collect what you want",
-        "title3": "Developer Community: Contribute to the Ecosystem",
-        "title4": "Support and Resources for Developers",
-        "title5": "Open source",
+        "titles": [
+            "An accessible online platform for developers",
+            "Collect what you want",
+            "Developer Community: Contribute to the Ecosystem",
+            "Support and Resources for Developers",
+            "Open source"
+        ],
         "categories": ["Custom Software", "API Development", "Data engineering", "Infrastructure & DevOps", "AI development"],
         "link": "https://opencomponents.io/",
         "colorTitle": "#FFFFFF",
-        "images": {
-            "first": "/img/oce_1.jpg",
-            "second": "/img/oce_2.jpg",
-            "third": "/img/oce_3.png",
-            "fourth": "/img/oce_4.jpg",
-            "fifth": "/img/oce_5.jpg"
-        }
+        "images": [
+            "/img/oce_1.jpg",
+            "/img/oce_2.jpg",
+            "/img/oce_3.png",
+            "/img/oce_4.jpg",
+            "/img/oce_5.jpg"
+        ]
     }
 ]
