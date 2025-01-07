@@ -75,16 +75,16 @@ function AppBar({ handleClickToButton }) {
     'flex items-center justify-center whitespace-nowrap rounded-full bg-transparent font-bold text-white duration-150 last:bg-appBarBtn active:bg-appBarBtn active:duration-150 sm:h-[4.95vw] sm:px-[1.86vw] sm:text-[1.42vw] lg:h-[4.43vw] lg:px-[1.6vw] lg:text-[1.1vw] lg:hover:bg-appBarBtn lg:hover:duration-150 lg:active:bg-transparent 2xl:h-[2.53vw] 2xl:px-[0.88vw] 2xl:text-[0.61vw]'
 
   const getAttributes = (label, href) => {
-    return href
-      ? {
-          className: classesButtons,
-          onClick: () => handleClickToButton(label),
-          href,
-        }
-      : {
-          className: classesButtons,
-          onClick: () => handleClickToButton(label),
-        }
+    const attributes = {
+      className: classesButtons,
+      onClick: () => handleClickToButton(label),
+    }
+
+    if (href) {
+      attributes.href = href
+    }
+
+    return attributes
   }
 
   return (

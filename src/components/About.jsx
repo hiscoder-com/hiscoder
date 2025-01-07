@@ -9,11 +9,11 @@ export function SelectedText() {
 }
 
 const textClasses =
-  'animation-timeline animate-emergence text-[5.13vw] leading-[5.65vw] sm:text-[2.08vw] lg:text-[1.86vw] 2xl:text-[1.4vw] sm:leading-[2.4vw] 2xl:text-[1.4vw] 2xl:leading-[1.5vw]'
+  'animation-timeline animate-emergence text-[5.13vw] leading-[5.65vw] sm:text-[2.08vw] lg:text-[1.86vw] sm:leading-[2.4vw] 2xl:text-[1.4vw] 2xl:leading-[1.5vw]'
 
 function About() {
   return (
-    <div className="block justify-between px-[5.15vw] pt-[10.25vw] sm:flex sm:gap-1 sm:px-[4.37vw] sm:pt-[5.22vw] lg:pt-[3vw] 2xl:pt-[2.91vw]">
+    <div className="block justify-between px-[5.15vw] pt-[10.25vw] sm:flex sm:gap-5 sm:px-[4.37vw] sm:pt-[5.22vw] lg:pt-[3vw] 2xl:gap-1 2xl:pt-[2.91vw]">
       <div>
         <h3 className="animation-timeline animate-emergence text-[10.3vw] leading-[4.7vw] delay-1000 sm:text-[5vw] lg:text-[3.72vw] lg:leading-[3.8vw]">
           About <br className="hidden sm:block" /> HisCoder
@@ -34,7 +34,7 @@ function About() {
             </p>
           </div>
           <div className="mt-[5.13vw] flex items-start gap-2.5 sm:mt-[3vw] sm:gap-[1vw]">
-            <img src="/img/cross.svg" alt="book icon" className="sm:w-[7.47vw]" />
+            <img src="/img/cross.svg" alt="cross icon" className="sm:w-[7.47vw]" />
             <p className={`${textClasses}`}>
               Rooted in faith and driven by excellence, we specialize in creating
               platforms, websites, and applications that empower individuals, churches,
@@ -45,7 +45,7 @@ function About() {
             </p>
           </div>
           <div className="mt-[5.13vw] flex items-start gap-2.5 sm:mt-[3vw] sm:gap-[1vw]">
-            <img src="/img/flash.svg" alt="book icon" className="sm:w-[4.04vw]" />
+            <img src="/img/flash.svg" alt="flash icon" className="sm:w-[4.04vw]" />
             <p className={`${textClasses}`}>
               With a commitment to excellence, we deliver{' '}
               <b>
