@@ -1,10 +1,44 @@
+import { useState } from 'react'
+
+import About from './About'
 import AppBar from './AppBar'
 import MobileAppBar from './MobileAppBar'
+import ModalWindow from './ModalWindow'
 
 function Header() {
+  const [isShowAbout, setIsShowAbout] = useState(false)
+  const [overlay, setOverlay] = useState('opacity-0')
+  const [modalWindow, setModalWindow] = useState('translate-y-full')
+
+  const handleClickToButton = (label) => {
+    if (label !== 'About') return
+    setIsShowAbout(true)
+    setTimeout(() => {
+      setOverlay('opacity-1')
+      setModalWindow('translate-y-0 delay-200')
+    }, 0)
+  }
+
+  const handleCloseModal = (_, link) => {
+    setTimeout(() => {
+      setIsShowAbout(false)
+    }, 600)
+    setModalWindow('translate-y-full')
+    setOverlay('opacity-0 delay-200')
+
+    setTimeout(() => {
+      if (link) {
+        const contactUs = document.getElementById('contactUs')
+        if (contactUs) {
+          contactUs.scrollIntoView()
+        }
+      }
+    }, 500)
+  }
+
   return (
     <header className="relative flex w-full flex-col items-center px-5 pb-[40vw] sm:bg-bgHeader sm:px-0 sm:pb-[6.5vw] lg:pb-[5.2vw] 2xl:pb-[8.36vw]">
-      <MobileAppBar />
+      <MobileAppBar handleClickToButton={handleClickToButton} />
       <h1 className="title-gradient mt-24 hidden animate-descent select-none bg-clip-text font-sans text-[20vw] font-black not-italic leading-none text-transparent duration-500 sm:mt-0 sm:block">
         HisCoder
       </h1>
@@ -30,7 +64,19 @@ function Header() {
         Request a Consultation
       </a>
 
-      <AppBar />
+      <AppBar handleClickToButton={handleClickToButton} />
+      {isShowAbout && (
+        <ModalWindow
+          modalIsOpen={isShowAbout}
+          onCloseModal={handleCloseModal}
+          label={'About HisCoder'}
+          preventScroll={true}
+          overlay={overlay}
+          modalWindow={modalWindow}
+        >
+          <About />
+        </ModalWindow>
+      )}
 
       <p
         id="text"

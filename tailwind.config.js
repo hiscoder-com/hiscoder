@@ -18,7 +18,7 @@ export default {
       appBarBtn: '#049045',
       bgHeader: '#EBEBEB',
       basic: '#1A1A1A',
-      buttonGroup: '#AFAFAF4D',
+      buttonGroup: '#6565654D',
       buttonHover: '#AFEFCE',
       ourServicesBtn: '#C3C3C3',
       cursor: '#1A1A1ACC',

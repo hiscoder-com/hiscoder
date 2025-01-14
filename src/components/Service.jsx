@@ -4,7 +4,7 @@ function Service({ client, img, service }) {
   return (
     <li className="w-full md:w-[25.32vw]">
       <button>
-        <img src={img} alt={client} />
+        <img src={img} alt={client} loading="lazy" />
         <div className="mt-[4.1vw] block md:mt-[0.8vw] md:flex md:gap-x-5 2xl:mt-[0.59vw]">
           <div className="w-5/12 2xl:w-2/6">
             <p className="text-left text-[3.08vw] uppercase sm:text-[2.09vw] md:text-[1.06vw] lg:text-[1vw] 2xl:text-[0.35vw]">

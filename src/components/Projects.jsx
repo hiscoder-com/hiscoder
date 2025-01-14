@@ -1,23 +1,20 @@
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 
+import { motion } from 'framer-motion'
 import PropTypes from 'prop-types'
 import { useDispatch, useSelector } from 'react-redux'
 
-import projects from '../../data/projects.json'
+import { LOCATION } from '../constants/constants.js'
 import { selectProject } from '../redux/actions'
 import { selectProjectSelector } from '../redux/selectors'
 import ModalWindow from './ModalWindow'
 import Project from './Project'
 import ProjectsModal from './ProjectsModal'
 
-function Projects({
-  location,
-  filteredItems,
-  category,
-  modalServiceIsOpen,
-  setShowProjectsModal,
-}) {
+function Projects({ location, filteredItems, setShowProjectsModal }) {
   const dispatch = useDispatch()
+
+  const sliderRef = useRef(null)
 
   const selectedProject = useSelector(selectProjectSelector)
 
@@ -27,17 +24,20 @@ function Projects({
   const [overlay, setOverlay] = useState('opacity-0')
   const [modalWindow, setModalWindow] = useState('translate-y-full')
 
-  const [filteredProjects, setFilteredProjects] = useState(projects)
   const [label, setLabel] = useState('')
+  const [isHiddenDescription, setIsHiddenDescription] = useState(true)
+
+  const isGalLocation = location === LOCATION.GAL
+  const isSrvLocation = location === LOCATION.SRV
 
   useEffect(() => {
-    setColor(location === 'gallery' ? { color: 'white' } : {})
+    setColor(isGalLocation ? { color: 'white' } : {})
   }, [location])
 
   const handleClick = useCallback((project) => {
     dispatch(selectProject(project))
     {
-      location !== 'gallery' && setShowProjectsModal(true)
+      !isGalLocation && setShowProjectsModal(true)
     }
     setLabel(project.label)
     setModalIsOpen(true)
@@ -47,137 +47,108 @@ function Projects({
     }, 0)
   }, [])
 
-  const handleCloseModal = () => {
+  const handleCloseModal = (_, link) => {
     setTimeout(() => {
       setModalIsOpen(false)
     }, 600)
     setModalWindow('translate-y-full')
     setOverlay('opacity-0 delay-200')
-  }
 
-  useEffect(() => {
-    setFilteredProjects(
-      filteredProjects.filter((project) => project.categories.includes(category))
-    )
-  }, [])
-
-  useEffect(() => {
-    if (modalServiceIsOpen && window.innerWidth > 1132) {
-      const projectsSliderServices = document.querySelector('.projectsSliderServices')
-      const projectsCarouselServices = document.querySelector('.projectsCarouselServices')
-
-      let coordX = 0
-
-      projectsCarouselServices.addEventListener('mousemove', handleMouseMove)
-      projectsCarouselServices.addEventListener('mouseout', handleMouseOut)
-
-      const percent = () => {
-        if (window.innerWidth <= 1133) {
-          return 75
-        } else if (window.innerWidth <= 1922) {
-          return 60
-        } else if (window.innerWidth > 1922) {
-          return 40
+    setTimeout(() => {
+      if (link) {
+        const contactUs = document.getElementById('contactUs')
+        if (contactUs) {
+          contactUs.scrollIntoView()
         }
       }
+    }, 500)
+  }
 
-      function handleMouseMove(e) {
-        coordX = e.pageX - projectsSliderServices.offsetWidth
-        const xServices = (coordX / projectsSliderServices.offsetWidth) * percent()
+  const slider = sliderRef.current
 
-        projectsCarouselServices.style.cssText = `
-          transform: translateX(${-xServices}%);
-          transition-property: translateX;
-          `
-      }
+  function handleMouseMove(e) {
+    if (!slider) return
 
-      function handleMouseOut() {
-        projectsCarouselServices.style.cssText = 'transform: translateX(0);'
-      }
-
-      return () => {
-        projectsSliderServices.removeEventListener('mousemove', handleMouseMove)
-        projectsSliderServices.removeEventListener('mouseout', handleMouseOut)
-      }
-    }
-  }, [modalServiceIsOpen])
-
-  useEffect(() => {
     if (window.innerWidth > 1133) {
-      const projectsSliderGallery = document.querySelector('.projectsSliderGallery')
-      const projectsCarouselGallery = document.querySelector('.projectsCarouselGallery')
+      const rect = slider.getBoundingClientRect()
+      const mouseX = e.clientX - rect.left
+      const percent = (mouseX / rect.width - 0.5) * 6
 
-      let coordX = 0
-
-      projectsSliderGallery.addEventListener('mousemove', handleMouseMove)
-      projectsSliderGallery.addEventListener('mouseout', handleMouseOut)
-
-      function handleMouseMove(e) {
-        coordX = e.pageX - projectsSliderGallery.offsetWidth
-        const xGallery = (coordX / projectsSliderGallery.offsetWidth) * 20
-
-        projectsCarouselGallery.style.cssText = `
-          transform: translateX(${-xGallery}%);
-          transition-property: translateX;
-          `
-      }
-
-      function handleMouseOut() {
-        projectsCarouselGallery.style.cssText = 'transform: translateX(0);'
-      }
-
-      return () => {
-        projectsSliderGallery.removeEventListener('mousemove', handleMouseMove)
-        projectsSliderGallery.removeEventListener('mouseout', handleMouseOut)
-      }
+      slider.style.transform = isGalLocation
+        ? `translateX(${-percent * 10}%) scale(1.5) translateY(14%)`
+        : `translateX(${-percent * 27}%) scale(2.5) translateY(28%)`
+      setIsHiddenDescription(false)
     }
-  }, [])
+  }
+
+  function handleMouseLeave() {
+    if (!slider) return
+
+    setIsHiddenDescription(true)
+    slider.style.transform = 'scale(1)'
+  }
+
+  const heightService = isHiddenDescription ? 'lg:h-[7.2vw]' : 'lg:h-[23vw] 2xl:h-[25vw]'
+  const heightGallery = isHiddenDescription ? 'lg:h-[13.5vw]' : 'lg:h-[28vw] 2xl:h-[25vw]'
 
   return (
     <>
-      {location === 'services' &&
-        filteredProjects !== undefined &&
-        filteredProjects.length > 0 && (
-          <div className="projectsSliderServices animation-timeline z-10 mt-[39.2vw] w-full animate-emergence self-end duration-500 sm:mt-[2vw] lg:relative lg:mt-[1.57vw] lg:h-[28vw] lg:w-full lg:overflow-hidden lg:hover:-translate-x-[5vw] lg:hover:scale-110 lg:hover:duration-500 2xl:h-[21vw]">
-            <div className="projectsCarouselServices pointer-events-auto flex flex-col gap-y-10 duration-500 lg:absolute lg:flex-row lg:gap-x-2.5">
-              {filteredProjects.map((project, index) => (
+      {isSrvLocation && filteredItems !== undefined && filteredItems.length > 0 && (
+        <div
+          ref={sliderRef}
+          onMouseMove={handleMouseMove}
+          onMouseLeave={handleMouseLeave}
+          className={`${heightService} animation-timeline relative w-full animate-emergence overflow-hidden duration-200 sm:mt-[5.03vw] lg:mt-[2.61vw] lg:w-[56.3vw] lg:pr-[3.5vw] 2xl:mt-[1.46vw]`}
+        >
+          <motion.div initial={{ x: 0 }} animate={{ x: 0 }}>
+            <motion.div className="flex flex-col sm:flex-row sm:flex-wrap sm:gap-x-[1vw] sm:gap-y-[5vw] lg:flex-nowrap lg:gap-[0.3vw]">
+              {filteredItems.map((project, index) => (
                 <Project
                   key={index}
-                  location={location}
                   project={project}
                   handleClick={handleClick}
                   color={color}
+                  isHiddenDescription={isHiddenDescription}
+                  location={location}
                 />
               ))}
-            </div>
-          </div>
-        )}
-      {location === 'services' &&
-        filteredProjects !== undefined &&
-        filteredProjects.length === 0 && (
-          <div className="flex w-full justify-center pt-[20vw] sm:pt-[10vw]">
-            <p className="text-center text-[4.1vw] text-basic sm:text-[1.24vw] lg:text-[1.15vw] 2xl:text-[0.82vw]">
-              No projects here at the moment, but we&apos;re always ready to discuss your
-              ideas in this field!
-            </p>
-          </div>
-        )}
-      {location === 'gallery' && filteredItems.length > 0 && (
-        <div className="projectsSliderGallery animation-timeline z-10 mt-[39.2vw] w-full animate-emergence self-end duration-500 hover:duration-500 sm:mt-[5.03vw] lg:relative lg:mt-[1.57vw] lg:h-[28vw] lg:translate-x-0 lg:hover:-translate-x-[10vw] lg:hover:scale-110 2xl:h-[21vw]">
-          <div className="projectsCarouselGallery flex flex-col gap-y-[4vw] duration-500 sm:flex-row sm:flex-wrap sm:gap-x-[0.8vw] lg:absolute lg:flex-nowrap lg:overflow-hidden">
-            {filteredItems.map((project, index) => (
-              <Project
-                key={index}
-                project={project}
-                handleClick={handleClick}
-                color={color}
-              />
-            ))}
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       )}
-      {location === 'gallery' && filteredItems.length === 0 && (
-        <div className="flex w-full items-center justify-center sm:min-h-[89.022vw] lg:min-h-[29.8vw] 2xl:min-h-[22vw]">
+      {isSrvLocation && filteredItems !== undefined && filteredItems.length === 0 && (
+        <div className="flex w-full justify-center pt-[20vw] sm:pt-[10vw]">
+          <p className="text-center text-[4.1vw] text-basic sm:text-[1.24vw] lg:text-[1.15vw] 2xl:text-[0.82vw]">
+            No projects here at the moment, but we&apos;re always ready to discuss your
+            ideas in this field!
+          </p>
+        </div>
+      )}
+      {isGalLocation && filteredItems.length > 0 && (
+        <div
+          ref={sliderRef}
+          onMouseMove={handleMouseMove}
+          onMouseLeave={handleMouseLeave}
+          className={`${heightGallery} animation-timeline relative mt-[43vw] w-full animate-emergence overflow-hidden duration-200 sm:mt-[5.03vw] lg:mt-[1.57vw]`}
+        >
+          <motion.div initial={{ x: 0 }} animate={{ x: 0 }}>
+            <motion.div className="flex flex-col gap-y-[12vw] sm:flex-row sm:flex-wrap sm:gap-x-[1vw] sm:gap-y-[5vw] lg:flex-nowrap lg:gap-[0.4vw]">
+              {filteredItems.map((project, index) => (
+                <Project
+                  key={index}
+                  project={project}
+                  handleClick={handleClick}
+                  color={color}
+                  isHiddenDescription={isHiddenDescription}
+                  location={location}
+                />
+              ))}
+            </motion.div>
+          </motion.div>
+        </div>
+      )}
+      {isGalLocation && filteredItems.length === 0 && (
+        <div className="flex w-full items-center justify-center sm:min-h-[42.65vw] lg:min-h-[15.06vw] 2xl:min-h-[15.05vw]">
           <p className="text-[1.95vw] text-white lg:text-[1.15vw] 2xl:text-[0.82vw]">
             No projects here at the moment, but we&apos;re always ready to discuss your
             ideas in this field!
@@ -188,7 +159,7 @@ function Projects({
         <ModalWindow
           onCloseModal={handleCloseModal}
           modalIsOpen={modalIsOpen}
-          label={label}
+          label={`Our services / ${label}`}
           preventScroll={true}
           overlay={overlay}
           modalWindow={modalWindow}
@@ -203,8 +174,6 @@ function Projects({
 Projects.propTypes = {
   location: PropTypes.string.isRequired,
   filteredItems: PropTypes.array,
-  category: PropTypes.string,
-  modalServiceIsOpen: PropTypes.bool,
   setShowProjectsModal: PropTypes.func,
 }
 

@@ -53,7 +53,7 @@ function ModalWindow({
           </svg>
         </button>
         <h3 className="ml-[5.15vw] whitespace-nowrap text-left text-[3.08vw] font-extrabold uppercase text-basic before:mr-[1.3vw] before:inline-flex before:h-[2.31vw] before:w-[2.31vw] before:rounded-full before:bg-basic sm:ml-[3.53vw] sm:text-[1.06vw] sm:before:mr-[0.45vw] sm:before:h-[0.8vw] sm:before:w-[0.8vw] lg:text-[0.63vw] lg:before:mr-[0.27vw] lg:before:h-[0.47vw] lg:before:w-[0.47vw] 2xl:ml-[4.36vw] 2xl:text-[0.35vw] 2xl:before:mr-[0.15vw] 2xl:before:h-[0.263vw] 2xl:before:w-[0.263vw]">
-          Our services / {label}
+          {label}
         </h3>
         {children}
         <p className="animation-timeline mt-[20.5vw] animate-emergence text-center text-[3.6vw] sm:mt-[10.6vw] sm:text-[1.77vw] lg:mt-[9.37vw] lg:text-[1.46vw] 2xl:mt-[7.26vw] 2xl:text-[0.93vw]">
@@ -61,7 +61,7 @@ function ModalWindow({
         </p>
         <a
           href="#contactUs"
-          onClick={onCloseModal}
+          onClick={(e) => onCloseModal(e, 'contactUs')}
           className="animation-timeline mt-[5.15vw] block animate-emergence text-center text-[5.15vw] text-basic underline sm:mt-[1.77vw] sm:text-[2.65vw] lg:mt-[0.5vw] lg:text-[2.2vw] 2xl:mt-[0.59vw] 2xl:text-[1.4vw]"
         >
           Contact us
@@ -82,8 +82,10 @@ function ModalWindow({
 ModalWindow.propTypes = {
   modalIsOpen: PropTypes.bool.isRequired,
   onCloseModal: PropTypes.func.isRequired,
-  children: PropTypes.element.isRequired,
+  children: PropTypes.oneOfType([PropTypes.element, PropTypes.array]).isRequired,
   label: PropTypes.string.isRequired,
+  overlay: PropTypes.string.isRequired,
+  modalWindow: PropTypes.string.isRequired,
 }
 
 export default ModalWindow

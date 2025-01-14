@@ -8,6 +8,10 @@
          "href": "#projects"
     },
     {
+        "label": "About",
+         "href": ""
+    },
+    {
         "label": "Request a Consultation",
          "href": "#contactUs"
     }
